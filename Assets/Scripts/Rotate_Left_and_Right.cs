@@ -17,7 +17,7 @@ public class Rotate_Left_and_Right : MonoBehaviour
         rightLimit = 360 - arc / 2;
         leftGrace = leftLimit + 2;
         rightGrace = rightLimit - 2;
-        //roataton starts  lefty by default
+        //roataton starts  left by default
         moveLeft = true;
         moveRight = false;       
     }
