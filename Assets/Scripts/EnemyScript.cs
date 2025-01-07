@@ -2,12 +2,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using UnityEngine;
 using UnityEngine.Pool;
 
 public class EnemyScript : MonoBehaviour
 {
-
+    [SerializeField] int damage = 3;
     public HpController _hpController;
 
     ObjectPool<EnemyScript> _pool;
@@ -18,10 +19,21 @@ public class EnemyScript : MonoBehaviour
         _hpController.OnDeath += Die;
     }
 
+
+    //damage player
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent<IDamagable>(out IDamagable damagable))
+        {
+            damagable.TakeDamage(damage);
+            _pool.Release(this);
+        }
+    }
+
     private void Die(Vector3 poison)
     {
+        poison = transform.position;
         UImanagger.score += 1;
-        Debug.Log("I have died" + " Scoore shoud be:" + " " + UImanagger.score);
         _pool.Release(this);  
     }
 

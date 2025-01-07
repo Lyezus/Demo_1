@@ -15,8 +15,7 @@ public  class UImanagger : MonoBehaviour
     
     // Start is called before the first frame update
     void Start()
-    {
-        _playerHp = GetComponent<HpController>();
+    {      
         currentHealth = _playerHp.currentHealth;
         _healthText.text = "Health:" + " " + currentHealth;
         _scoreText.text = "Score:" + " " + score; 

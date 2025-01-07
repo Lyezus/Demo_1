@@ -10,12 +10,16 @@ public class MoveToTargetFixed : MonoBehaviour
     [Tooltip("Lifesan in seconds (safety net)")][SerializeField] float lifeSpan = 100f;
     float currentLifeSpan;
 
-
+    private void Start()
+    {
+        transform.LookAt(target.transform);
+        currentLifeSpan = lifeSpan;
+    }
     // Start is called before the first frame update
     private void OnEnable()
     {
+        transform.LookAt(target.transform);
         currentLifeSpan = lifeSpan;
-        transform.LookAt(target.transform.position);
     }
 
     // Update is called once per frame
