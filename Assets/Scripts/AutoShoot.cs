@@ -10,7 +10,7 @@ public class AutoShoot : MonoBehaviour
     [SerializeField] int _bulletCapacity;
     [SerializeField] int _bulletCapacityMax;
 
- 
+    public bool Shoot {get; set;}
      
     [SerializeField]
     [Tooltip("Fire rate in shots per minute")]
@@ -33,11 +33,12 @@ public class AutoShoot : MonoBehaviour
         
         delay =  60 / fireRate;
 
+        Shoot = true;
     }
     // Update is called once per frame
     void Update()
     {
-        if (delay < deltaTime)
+        if (delay < deltaTime && Shoot)
         {
             _bulletPool.Get();
             deltaTime = 0;

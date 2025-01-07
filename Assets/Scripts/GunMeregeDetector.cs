@@ -8,6 +8,7 @@ public class GunMeregeDetector : MonoBehaviour
     [SerializeField] GameObject _gunFrontVisual;
 
     [SerializeField] GameObject _gunBack;
+    [SerializeField] GameObject _gunBackVisual;
 
     [SerializeField] GameObject _mergedGun;
     [SerializeField] GameObject _mergedGunVisual;
@@ -23,11 +24,11 @@ public class GunMeregeDetector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Gun"))
         {
-            shootFront.enabled = false;
-            shootBack.enabled = false;
+            shootFront.Shoot = false;
+            shootBack.Shoot = false;
 
             _gunFrontVisual.SetActive(false);
-            _gunBack.SetActive(false);
+            _gunBackVisual.SetActive(false);
             _mergedGun.SetActive(true);
         }
     }
@@ -36,11 +37,11 @@ public class GunMeregeDetector : MonoBehaviour
         if (other.gameObject.CompareTag("Gun")) 
         {
             _gunFrontVisual.SetActive(true);
-            _gunBack.SetActive(true);
+            _gunBackVisual.SetActive(true);
             _mergedGun.SetActive(false);
 
-            shootFront.enabled = true;
-            shootBack.enabled = true;
+            shootFront.Shoot = true;
+            shootBack.Shoot = true;
         }
     }
   
