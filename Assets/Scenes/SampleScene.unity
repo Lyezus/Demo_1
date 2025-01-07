@@ -668,7 +668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 396508413}
   m_Layer: 0
-  m_Name: MerhedGun
+  m_Name: MergedGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1074,7 +1074,8 @@ RectTransform:
   - {fileID: 1211557302}
   - {fileID: 1506921955}
   - {fileID: 224635519}
-  m_Father: {fileID: 0}
+  - {fileID: 1134606531}
+  m_Father: {fileID: 1011549419}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1725,7 +1726,8 @@ MonoBehaviour:
   _gunFront: {fileID: 947588622}
   _gunFrontVisual: {fileID: 710008425}
   _gunBack: {fileID: 1728405678}
-  _mergedGun: {fileID: 0}
+  _gunBackVisual: {fileID: 0}
+  _mergedGun: {fileID: 396508412}
   _mergedGunVisual: {fileID: 1591134194}
 --- !u!65 &947588626
 BoxCollider:
@@ -1823,6 +1825,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rot_speed: 40
   rot_max: 40
+--- !u!1 &1011549418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1011549419}
+  m_Layer: 0
+  m_Name: --UI--
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1011549419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011549418}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 569384583}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1015966353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2045,12 +2079,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134606528}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -587.5, y: -330.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 569384583}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1211557301
 GameObject:
@@ -3183,5 +3217,4 @@ SceneRoots:
   - {fileID: 313694997}
   - {fileID: 145948489}
   - {fileID: 347393169}
-  - {fileID: 569384583}
-  - {fileID: 1134606531}
+  - {fileID: 1011549419}

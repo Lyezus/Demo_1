@@ -20,7 +20,9 @@ public class EnemyScript : MonoBehaviour
 
     private void Die(Vector3 poison)
     {
-        _pool.Release(this);
+        UImanagger.score += 1;
+        Debug.Log("I have died" + " Scoore shoud be:" + " " + UImanagger.score);
+        _pool.Release(this);  
     }
 
     public void SetPool(ObjectPool<EnemyScript> pool) => _pool = pool;
