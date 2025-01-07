@@ -11,7 +11,7 @@ public class GunMeregeDetector : MonoBehaviour
     [SerializeField] GameObject _gunBackVisual;
 
     [SerializeField] GameObject _mergedGun;
-    [SerializeField] GameObject _mergedGunVisual;
+
 
     AutoShoot shootFront;
     AutoShoot shootBack;
@@ -29,16 +29,19 @@ public class GunMeregeDetector : MonoBehaviour
 
             _gunFrontVisual.SetActive(false);
             _gunBackVisual.SetActive(false);
+
             _mergedGun.SetActive(true);
+
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Gun")) 
         {
+            _mergedGun.SetActive(false);
+
             _gunFrontVisual.SetActive(true);
             _gunBackVisual.SetActive(true);
-            _mergedGun.SetActive(false);
 
             shootFront.Shoot = true;
             shootBack.Shoot = true;
