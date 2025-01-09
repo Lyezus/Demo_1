@@ -10,7 +10,7 @@ public  class UImanagger : MonoBehaviour
     [SerializeField] HpController _playerHp;
 
     public static int  score = 0;
-    int currentHealth;
+    public static int currentHealth;
 
     
     // Start is called before the first frame update
