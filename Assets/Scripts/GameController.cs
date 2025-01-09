@@ -39,4 +39,8 @@ public class GameController : MonoBehaviour
 
         SceneManager.LoadScene(scene);
     }
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
 }
